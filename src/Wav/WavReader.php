@@ -1,12 +1,20 @@
 <?php
+/*
+ * This file is part of the Samovar/FFTConsole package.
+ *
+ * (c) Denis Buzdygar <prototype.denis@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Samovar\FFTConsole\Wav;
 
-use Samovar\FFTConsole\Wav\RiffInterface;
-use Samovar\FFTConsole\Wav\FmtInterface;
-use Samovar\FFTConsole\Wav\DataInterface;
 use Samovar\FFTConsole\BinaryReader;
 
+/**
+ * @author Denis Buzdygar <prototype.denis@gmail.com>
+ */
 class WavReader implements WavReaderInterface
 {
     /**
@@ -29,6 +37,9 @@ class WavReader implements WavReaderInterface
      */
     private $resource;
 
+    /**
+     * {@inheritdoc}
+     */
     public function __construct($resource, RiffInterface $riff, FmtInterface $fmt, DataInterface $data)
     {
         $this->riff = $riff;
@@ -37,6 +48,9 @@ class WavReader implements WavReaderInterface
         $this->resource = $resource;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function read()
     {
         $chunkID = BinaryReader::read($this->resource, 'a*', 4);
@@ -105,9 +119,7 @@ class WavReader implements WavReaderInterface
     }
 
     /**
-     * Get the value of Riff
-     *
-     * @return RiffInterface
+     * {@inheritdoc}
      */
     public function getRiff()
     {
@@ -115,11 +127,7 @@ class WavReader implements WavReaderInterface
     }
 
     /**
-     * Set the value of Riff
-     *
-     * @param RiffInterface riff
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setRiff(RiffInterface $riff = null)
     {
@@ -129,9 +137,7 @@ class WavReader implements WavReaderInterface
     }
 
     /**
-     * Get the value of Fmt
-     *
-     * @return FmtInterface
+     * {@inheritdoc}
      */
     public function getFmt()
     {
@@ -139,11 +145,7 @@ class WavReader implements WavReaderInterface
     }
 
     /**
-     * Set the value of Fmt
-     *
-     * @param FmtInterface fmt
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setFmt(FmtInterface $fmt = null)
     {
@@ -153,9 +155,7 @@ class WavReader implements WavReaderInterface
     }
 
     /**
-     * Get the value of Data
-     *
-     * @return DataInterface
+     * {@inheritdoc}
      */
     public function getData()
     {
@@ -163,11 +163,7 @@ class WavReader implements WavReaderInterface
     }
 
     /**
-     * Set the value of Data
-     *
-     * @param DataInterface data
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setData(DataInterface $data = null)
     {
@@ -175,5 +171,4 @@ class WavReader implements WavReaderInterface
 
         return $this;
     }
-
 }

@@ -1,7 +1,18 @@
 <?php
+/*
+ * This file is part of the Samovar/FFTConsole package.
+ *
+ * (c) Denis Buzdygar <prototype.denis@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Samovar\FFTConsole\Wav;
 
+/**
+ * @author Denis Buzdygar <prototype.denis@gmail.com>
+ */
 class Riff implements RiffInterface
 {
     /**
@@ -20,9 +31,7 @@ class Riff implements RiffInterface
     private $format;
 
     /**
-     * Get the value of Chunk
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getChunkID()
     {
@@ -30,11 +39,7 @@ class Riff implements RiffInterface
     }
 
     /**
-     * Set the value of Chunk
-     *
-     * @param mixed chunkID
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setChunkID($chunkID)
     {
@@ -44,9 +49,7 @@ class Riff implements RiffInterface
     }
 
     /**
-     * Get the value of Chunk Size
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getChunkSize()
     {
@@ -54,11 +57,7 @@ class Riff implements RiffInterface
     }
 
     /**
-     * Set the value of Chunk Size
-     *
-     * @param mixed chunkSize
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setChunkSize($chunkSize)
     {
@@ -68,9 +67,7 @@ class Riff implements RiffInterface
     }
 
     /**
-     * Get the value of Format
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getFormat()
     {
@@ -78,11 +75,7 @@ class Riff implements RiffInterface
     }
 
     /**
-     * Set the value of Format
-     *
-     * @param mixed format
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setFormat($format)
     {
@@ -90,5 +83,4 @@ class Riff implements RiffInterface
 
         return $this;
     }
-
 }

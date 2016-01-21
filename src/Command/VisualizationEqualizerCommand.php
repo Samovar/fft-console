@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the Samovar/FFTConsole package.
+ *
+ * (c) Denis Buzdygar <prototype.denis@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Samovar\FFTConsole\Command;
 
@@ -14,6 +22,11 @@ use Samovar\FFTConsole\Wav\Data;
 use Samovar\FFTConsole\Wav\Fmt;
 use Samovar\FFTConsole\Render\ConsoleRender;
 
+/**
+ * Visualization.
+ *
+ * @author Denis Buzdygar <prototype.denis@gmail.com>
+ */
 class VisualizationEqualizerCommand extends Command
 {
     /**

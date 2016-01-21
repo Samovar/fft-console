@@ -1,7 +1,18 @@
 <?php
+/*
+ * This file is part of the Samovar/FFTConsole package.
+ *
+ * (c) Denis Buzdygar <prototype.denis@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Samovar\FFTConsole\Wav;
 
+/**
+ * @author Denis Buzdygar <prototype.denis@gmail.com>
+ */
 class Data implements DataInterface
 {
     /**
@@ -15,9 +26,7 @@ class Data implements DataInterface
     private $subchunk2Size;
 
     /**
-     * Get the value of Subchunk
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getSubchunk2ID()
     {
@@ -25,11 +34,7 @@ class Data implements DataInterface
     }
 
     /**
-     * Set the value of Subchunk
-     *
-     * @param mixed subchunk2ID
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setSubchunk2ID($subchunk2ID)
     {
@@ -39,9 +44,7 @@ class Data implements DataInterface
     }
 
     /**
-     * Get the value of Subchunk Size
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getSubchunk2Size()
     {
@@ -49,11 +52,7 @@ class Data implements DataInterface
     }
 
     /**
-     * Set the value of Subchunk Size
-     *
-     * @param mixed subchunk2Size
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setSubchunk2Size($subchunk2Size)
     {

@@ -1,7 +1,18 @@
 <?php
+/*
+ * This file is part of the Samovar/FFTConsole package.
+ *
+ * (c) Denis Buzdygar <prototype.denis@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Samovar\FFTConsole\Wav;
 
+/**
+ * @author Denis Buzdygar <prototype.denis@gmail.com>
+ */
 class Fmt implements FmtInterface
 {
     /**
@@ -55,9 +66,7 @@ class Fmt implements FmtInterface
     private $extraParams;
 
     /**
-     * Get the value of Subchunk
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getSubchunk1ID()
     {
@@ -65,11 +74,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Subchunk
-     *
-     * @param mixed subchunk1ID
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setSubchunk1ID($subchunk1ID)
     {
@@ -79,9 +84,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Subchunk Size
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getSubchunk1Size()
     {
@@ -89,11 +92,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Subchunk Size
-     *
-     * @param mixed subchunk1Size
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setSubchunk1Size($subchunk1Size)
     {
@@ -103,9 +102,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Audio Format
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getAudioFormat()
     {
@@ -113,11 +110,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Audio Format
-     *
-     * @param mixed audioFormat
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setAudioFormat($audioFormat)
     {
@@ -127,9 +120,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Num Channels
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getNumChannels()
     {
@@ -137,11 +128,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Num Channels
-     *
-     * @param mixed numChannels
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setNumChannels($numChannels)
     {
@@ -151,9 +138,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Sample Rate
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getSampleRate()
     {
@@ -161,11 +146,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Sample Rate
-     *
-     * @param mixed sampleRate
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setSampleRate($sampleRate)
     {
@@ -175,9 +156,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Byte Rate
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getByteRate()
     {
@@ -185,11 +164,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Byte Rate
-     *
-     * @param mixed byteRate
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setByteRate($byteRate)
     {
@@ -199,9 +174,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Block Align
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getBlockAlign()
     {
@@ -209,11 +182,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Block Align
-     *
-     * @param mixed blockAlign
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setBlockAlign($blockAlign)
     {
@@ -223,9 +192,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Bits Per Sample
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getBitsPerSample()
     {
@@ -233,11 +200,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Bits Per Sample
-     *
-     * @param mixed bitsPerSample
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setBitsPerSample($bitsPerSample)
     {
@@ -247,9 +210,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Extra Param Size
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getExtraParamSize()
     {
@@ -257,11 +218,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Extra Param Size
-     *
-     * @param mixed extraParamSize
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setExtraParamSize($extraParamSize)
     {
@@ -271,9 +228,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Get the value of Extra Params
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getExtraParams()
     {
@@ -281,11 +236,7 @@ class Fmt implements FmtInterface
     }
 
     /**
-     * Set the value of Extra Params
-     *
-     * @param mixed extraParams
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setExtraParams($extraParams)
     {

@@ -28,4 +28,59 @@ interface ConsoleRenderInterface
      * @param int   $width
      */
     public function render($matrix, $height, $width);
+
+    /**
+     * Render line.
+     *
+     * @param string $line
+     */
+    public function renderLine($line);
+
+    /**
+     * Get the value of Display Point.
+     *
+     * @return string
+     */
+    public function getDisplayPoint();
+
+    /**
+     * Set the value of Display Point.
+     *
+     * @param string displayPoint
+     *
+     * @return self
+     */
+    public function setDisplayPoint($displayPoint);
+
+    /**
+     * Get the value of Display Empty Point.
+     *
+     * @return string
+     */
+    public function getDisplayEmptyPoint();
+
+    /**
+     * Set the value of Display Empty Point.
+     *
+     * @param string displayEmptyPoint
+     *
+     * @return self
+     */
+    public function setDisplayEmptyPoint($displayEmptyPoint);
+
+    /**
+     * Get the value of Display Color.
+     *
+     * @return bool
+     */
+    public function getDisplayColor();
+
+    /**
+     * Set the value of Display Color.
+     *
+     * @param bool displayColor
+     *
+     * @return self
+     */
+    public function setDisplayColor($displayColor);
 }

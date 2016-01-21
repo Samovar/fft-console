@@ -37,9 +37,9 @@ class ConsoleRender implements ConsoleRenderInterface
      */
     private $displayColor;
 
-    /**
-     * @param OutputInterface $output
-     */
+     /**
+      * {@inheritdoc}
+      */
     public function __construct(OutputInterface $output)
     {
         $this->output = $output;
@@ -50,9 +50,7 @@ class ConsoleRender implements ConsoleRenderInterface
     }
 
     /**
-     * @param array $matrix 2D array
-     * @param int   $height
-     * @param int   $width
+     * {@inheritdoc}
      */
     public function render($matrix, $height, $width)
     {
@@ -84,15 +82,16 @@ class ConsoleRender implements ConsoleRenderInterface
         return;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function renderLine($line)
     {
         $this->output->writeLn($line);
     }
 
     /**
-     * Get the value of Display Point.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getDisplayPoint()
     {
@@ -100,11 +99,7 @@ class ConsoleRender implements ConsoleRenderInterface
     }
 
     /**
-     * Set the value of Display Point.
-     *
-     * @param string displayPoint
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setDisplayPoint($displayPoint)
     {
@@ -114,9 +109,7 @@ class ConsoleRender implements ConsoleRenderInterface
     }
 
     /**
-     * Get the value of Display Empty Point.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getDisplayEmptyPoint()
     {
@@ -124,11 +117,7 @@ class ConsoleRender implements ConsoleRenderInterface
     }
 
     /**
-     * Set the value of Display Empty Point.
-     *
-     * @param string displayEmptyPoint
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setDisplayEmptyPoint($displayEmptyPoint)
     {
@@ -138,9 +127,7 @@ class ConsoleRender implements ConsoleRenderInterface
     }
 
     /**
-     * Get the value of Display Color.
-     *
-     * @return bool
+     * {@inheritdoc}
      */
     public function getDisplayColor()
     {
@@ -148,11 +135,7 @@ class ConsoleRender implements ConsoleRenderInterface
     }
 
     /**
-     * Set the value of Display Color.
-     *
-     * @param bool displayColor
-     *
-     * @return self
+     * {@inheritdoc}
      */
     public function setDisplayColor($displayColor)
     {
