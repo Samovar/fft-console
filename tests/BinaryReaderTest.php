@@ -1,6 +1,6 @@
 <?php
 
-namespace Samovar\FFTConsole\Tests;
+namespace tests;
 
 use Samovar\FFTConsole\BinaryReader;
 
@@ -10,14 +10,13 @@ use Samovar\FFTConsole\BinaryReader;
 class BinaryReaderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test read
+     * Test read.
      */
     public function testRead()
     {
         // Start wav file
         //          R   I   F   F        integer (4 byte)     WAVE            fmt             16  PCM
         $string = "\x52\x49\x46\x46\x14\x60\x28\x00\x57\x41\x56\x45\x66\x6D\x74\x20\x10\x00\x00\x00\x01\x00";
-
 
         $data = sprintf('data://text/plain;base64,%s', base64_encode($string));
 

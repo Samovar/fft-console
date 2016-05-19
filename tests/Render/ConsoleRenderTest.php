@@ -1,6 +1,6 @@
 <?php
 
-namespace Samovar\FFTConsole\Tests\Render;
+namespace tests\Render;
 
 use Samovar\FFTConsole\Render\ConsoleRender;
 use Symfony\Component\Console\Output\OutputInterface;

@@ -12,7 +12,7 @@
 
     <testsuites>
         <testsuite name="FFTConsole Test Suite">
-            <directory>./src/Tests/</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
 

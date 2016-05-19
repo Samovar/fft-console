@@ -8,7 +8,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Samovar\FFTConsole;
 
 // https://github.com/thinkingmik/FastFourierTransform
@@ -16,6 +15,7 @@ use Samovar\FFTConsole\Wav\Fmt;
 use Samovar\FFTConsole\Wav\Data;
 use Samovar\FFTConsole\Wav\Riff;
 use Samovar\FFTConsole\Wav\WavReader;
+use Samovar\FFTConsole\Exception\InvalidResourceException;
 
 /**
  * WavInfo.
@@ -29,12 +29,14 @@ class WavInfo
      *
      * @param resource $resource
      *
+     * @throws InvalidResourceException If argument not resource
+     *
      * @return \Samovar\FFTConsole\Wav\WavReaderInterface
      */
     public static function getWavInfo($resource)
     {
         if (!is_resource($resource)) {
-            throw new \InvalidArgumentException('Allow only resource');
+            throw new InvalidResourceException($resource);
         }
 
         $wavReader = new WavReader(
