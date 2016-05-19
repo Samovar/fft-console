@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+
+<?php
+
+/**
+ * Example application.
+ *
+ * @author Denis Buzdygar <prototype.denis@gmail.com>
+ */
+use Samovar\FFTConsole\Command;
+use Symfony\Component\Console\Application;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$application = new Application('Samovar FFTConsole');
+$application->add(new Command\VisualizationEqualizerCommand());
+$application->add(new Command\TestRenderCommand());
+$application->add(new Command\WavInfoCommand());
+$application->add(new Command\SinusAnimateCommand());
+
+$application->run();

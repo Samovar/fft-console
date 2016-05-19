@@ -3,38 +3,40 @@
     "description": "wav visualization in php",
     "type": "application",
     "license": "GPL-2.0",
-    "authors": [
-        {
-            "name": "Denis Buzdygar",
-            "email": "prototype.denis@gmail.com"
+    "authors": [{
+        "name": "Denis Buzdygar",
+        "email": "prototype.denis@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Samovar\\FFTConsole\\": "src/",
+            "Tests\\": "tests/"
         }
-    ],
+    },
     "require": {
-        "php": ">=5.6",
+        "php": ">=5.6|~7.0",
         "thinkingmik/FastFourierTransform": "dev-master",
         "symfony/console": "^3.0",
         "mdurrant/php-binary-reader": "^1.0"
     },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "thinkingmik/FastFourierTransform",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/thinkingmik/FastFourierTransform",
-                    "type": "git",
-                    "reference": "origin/master"
-                },
-                "autoload":{
-                    "files": [
-                        "FFT.class.php"
-                    ]
-                }
+    "repositories": [{
+        "type": "package",
+        "package": {
+            "name": "thinkingmik/FastFourierTransform",
+            "version": "dev-master",
+            "source": {
+                "url": "https://github.com/thinkingmik/FastFourierTransform",
+                "type": "git",
+                "reference": "origin/master"
+            },
+            "autoload": {
+                "files": [
+                    "FFT.class.php"
+                ]
             }
         }
-    ],
-    "autoload": {
-        "psr-4": {"Samovar\\FFTConsole\\": "src/"}
+    }],
+    "require-dev": {
+        "phpunit/phpunit": "^5.3"
     }
 }
