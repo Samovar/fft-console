@@ -8,8 +8,10 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Samovar\FFTConsole;
+
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @author Denis Buzdygar <prototype.denis@gmail.com>
@@ -17,14 +19,24 @@ namespace Samovar\FFTConsole;
 class SinusAnimate
 {
     /**
-     * Dummy code
+     * Dummy code.
      */
-    public function __construct()
+    public function __construct(InputInterface $input, OutputInterface $output)
     {
         $map = [];
 
-        $h = isset($argv[1]) ? (int) $argv[1] : 24;
-        $w = isset($argv[2]) ? (int) $argv[2] : 60;
+        $iterations = $input->getOption('iterations');
+        $output->writeLn('');
+
+        if (null === $iterations) {
+            $iterationCounter = 1;
+        } else {
+            $iterations = abs($iterations);
+            $iterationCounter = $iterations;
+        }
+
+        $h = isset($argv[1]) ? (int) $input->getArgument('height') : 24;
+        $w = isset($argv[2]) ? (int) $input->getArgument('width') : 60;
 
         if ($h < 1) {
             $h = 1;
@@ -34,18 +46,22 @@ class SinusAnimate
         }
 
         $offset = 0;
-        while (true) {
+        while ($iterationCounter) {
+            if ($iterations !== 1) {
+                $output->write("\033c");
+            }
+
             if ($offset > $w) {
                 $offset = 0;
             }
 
-            for ($y = 0; $y < $h; $y++) {
-                for ($x = 0; $x < $w; $x++) {
+            for ($y = 0; $y < $h; ++$y) {
+                for ($x = 0; $x < $w; ++$x) {
                     $map[$y][$x] = ' ';
                 }
             }
 
-            for ($x = 0; $x < $w; $x++) {
+            for ($x = 0; $x < $w; ++$x) {
                 $y = (sin(1.0 * ($x + $offset)  * 2 * M_PI / $w) + 1) / 2 * $h;
                 if (($y >= 0) && ($y < $h)) {
                     $map[$y][$x] = '*';
@@ -53,15 +69,18 @@ class SinusAnimate
             }
             ++$offset;
 
-            for ($y = 0; $y < $h; $y++) {
-                for ($x = 0; $x < $w; $x++) {
-                    fwrite(STDOUT, $map[$y][$x]);
+            for ($y = 0; $y < $h; ++$y) {
+                for ($x = 0; $x < $w; ++$x) {
+                    $output->write($map[$y][$x]);
                 }
-                fwrite(STDOUT, "\n");
+                $output->writeLn('');
             }
-            fwrite(STDOUT, "\033c");
 
             usleep(3000);
+
+            if (null !== $iterations) {
+                --$iterationCounter;
+            }
         }
     }
 }

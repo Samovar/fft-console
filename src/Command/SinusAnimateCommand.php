@@ -11,7 +11,9 @@
 namespace Samovar\FFTConsole\Command;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Samovar\FFTConsole\SinusAnimate;
 
@@ -30,6 +32,9 @@ class SinusAnimateCommand extends Command
         $this
             ->setName('samovar:animate:sinus')
             ->setDescription('Example sinus animation')
+            ->addArgument('width', InputArgument::REQUIRED, 'Window width')
+            ->addArgument('height', InputArgument::REQUIRED, 'Window height')
+            ->addOption('iterations', null, InputOption::VALUE_OPTIONAL, 'If set, break on iteration')
             ->setHelp('
 Example:
 ./app samovar:animate:sinus
@@ -42,6 +47,6 @@ Example:
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        new SinusAnimate();
+        new SinusAnimate($input, $output);
     }
 }
