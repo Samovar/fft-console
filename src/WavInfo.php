@@ -36,7 +36,7 @@ class WavInfo
     public static function getWavInfo($resource)
     {
         if (!is_resource($resource)) {
-            throw new InvalidResourceException(sprinf('Type "%s" not supported. Allow only resource', gettype($resource)));
+            throw new InvalidResourceException($resource);
         }
 
         $wavReader = new WavReader(
