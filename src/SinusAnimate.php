@@ -1,11 +1,10 @@
 <?php
+
 /*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Samovar\FFTConsole;
@@ -62,7 +61,7 @@ class SinusAnimate
             }
 
             for ($x = 0; $x < $w; ++$x) {
-                $y = (sin(1.0 * ($x + $offset)  * 2 * M_PI / $w) + 1) / 2 * $h;
+                $y = (sin(1.0 * ($x + $offset) * 2 * M_PI / $w) + 1) / 2 * $h;
                 if (($y >= 0) && ($y < $h)) {
                     $map[$y][$x] = '*';
                 }
