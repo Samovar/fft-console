@@ -1,24 +1,24 @@
 <?php
+
 /*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Samovar\FFTConsole\Command;
 
+use Samovar\FFTConsole\TestRenderConsole;
+use Samovar\FFTConsole\VisualizationEqualizer;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Samovar\FFTConsole\TestRenderConsole;
-use Samovar\FFTConsole\VisualizationEqualizer;
 
 /**
  * Render square.
+ *
  * @author Denis Buzdygar <prototype.denis@gmail.com>
  */
 class TestRenderCommand extends Command

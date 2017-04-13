@@ -1,11 +1,10 @@
 <?php
+
 /*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Samovar\FFTConsole\Render;
@@ -37,9 +36,9 @@ class ConsoleRender implements ConsoleRenderInterface
      */
     private $displayColor;
 
-     /**
-      * {@inheritdoc}
-      */
+    /**
+     * {@inheritdoc}
+     */
     public function __construct(OutputInterface $output)
     {
         $this->output = $output;
@@ -56,7 +55,6 @@ class ConsoleRender implements ConsoleRenderInterface
     {
         for ($y = 0; $y < $height; ++$y) {
             for ($x = 0; $x < $width; ++$x) {
-
                 $point = $matrix[$y][$x]
                     ? $this->getDisplayPoint()
                     : $this->getDisplayEmptyPoint();
@@ -78,8 +76,6 @@ class ConsoleRender implements ConsoleRenderInterface
             }
             $this->output->writeLn('');
         }
-
-        return;
     }
 
     /**

@@ -1,11 +1,10 @@
 <?php
+
 /*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Samovar\FFTConsole\Wav;
@@ -74,7 +73,7 @@ class WavReader implements WavReaderInterface
         $this->fmt->setExtraParamSize(0);
         $this->fmt->setExtraParams(null);
 
-        if ($this->fmt->getAudioFormat() != 1) {
+        if ($this->fmt->getAudioFormat() !== 1) {
             $this->fmt->setExtraParamSize(BinaryReader::read($this->resource, 'v', 2));
             $this->fmt->setExtraParams(BinaryReader::read($this->resource, 'a*', $this->fmt->getExtraParamSize()));
         }

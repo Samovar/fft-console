@@ -1,11 +1,10 @@
 <?php
+
 /*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Samovar\FFTConsole\Wav;
@@ -26,6 +25,7 @@ interface FmtInterface
      * Set the value of Subchunk.
      *
      * @param mixed subchunk1ID
+     * @param mixed $subchunk1ID
      *
      * @return self
      */
@@ -42,6 +42,7 @@ interface FmtInterface
      * Set the value of Subchunk Size.
      *
      * @param mixed subchunk1Size
+     * @param mixed $subchunk1Size
      *
      * @return self
      */
@@ -58,6 +59,7 @@ interface FmtInterface
      * Set the value of Audio Format.
      *
      * @param mixed audioFormat
+     * @param mixed $audioFormat
      *
      * @return self
      */
@@ -74,6 +76,7 @@ interface FmtInterface
      * Set the value of Num Channels.
      *
      * @param mixed numChannels
+     * @param mixed $numChannels
      *
      * @return self
      */
@@ -90,6 +93,7 @@ interface FmtInterface
      * Set the value of Sample Rate.
      *
      * @param mixed sampleRate
+     * @param mixed $sampleRate
      *
      * @return self
      */
@@ -106,6 +110,7 @@ interface FmtInterface
      * Set the value of Byte Rate.
      *
      * @param mixed byteRate
+     * @param mixed $byteRate
      *
      * @return self
      */
@@ -122,6 +127,7 @@ interface FmtInterface
      * Set the value of Block Align.
      *
      * @param mixed blockAlign
+     * @param mixed $blockAlign
      *
      * @return self
      */
@@ -138,6 +144,7 @@ interface FmtInterface
      * Set the value of Bits Per Sample.
      *
      * @param mixed bitsPerSample
+     * @param mixed $bitsPerSample
      *
      * @return self
      */
@@ -149,10 +156,12 @@ interface FmtInterface
      * @return mixed
      */
     public function getExtraParamSize();
+
     /**
      * Set the value of Extra Param Size.
      *
      * @param mixed extraParamSize
+     * @param mixed $extraParamSize
      *
      * @return self
      */
@@ -164,10 +173,12 @@ interface FmtInterface
      * @return mixed
      */
     public function getExtraParams();
+
     /**
      * Set the value of Extra Params.
      *
      * @param mixed extraParams
+     * @param mixed $extraParams
      *
      * @return self
      */
