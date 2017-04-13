@@ -1,13 +1,11 @@
 <?php
-/*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
+/*
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 namespace Samovar\FFTConsole;
 
@@ -30,7 +28,6 @@ namespace Samovar\FFTConsole;
  * +--------------------------------------------------------------------------+
  *
  * Blink?
- *
  */
 class TestRenderConsole
 {
@@ -57,12 +54,12 @@ class TestRenderConsole
         while (true) {
             for ($y = 0; $y < $h; ++$y) {
                 for ($x = 0; $x < $w; ++$x) {
-                    print '*';
+                    echo '*';
                 }
-                print "\n";
+                echo "\n";
             }
             usleep(10000);
-            print chr(27).'[2J'.chr(27).'[;H';
+            echo chr(27).'[2J'.chr(27).'[;H';
         }
     }
 }

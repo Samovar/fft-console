@@ -1,21 +1,20 @@
 <?php
+
 /*
- * This file is part of the Samovar/FFTConsole package.
- *
- * (c) Denis Buzdygar <prototype.denis@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This file is part of FFTConsole.
+ * (c) Samovar <prototype.denis@gmail.com>
+ * This source file is subject to the GPL-2.0 license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Samovar\FFTConsole;
 
 // https://github.com/thinkingmik/FastFourierTransform
 use FFT;
-use Samovar\FFTConsole\Wav\RiffInterface;
-use Samovar\FFTConsole\Wav\WavReaderInterface;
-use Samovar\FFTConsole\Wav\WavReader;
 use Samovar\FFTConsole\Render\ConsoleRenderInterface;
+use Samovar\FFTConsole\Wav\RiffInterface;
+use Samovar\FFTConsole\Wav\WavReader;
+use Samovar\FFTConsole\Wav\WavReaderInterface;
 
 /**
  * FFTConsole.
@@ -98,7 +97,7 @@ class VisualizationEqualizer
      * @param WavReaderInterface     $wavReader
      * @param ConsoleRenderInterface $render
      */
-    public function __construct($resource, $dim = self::DIM_DEFAULT, WavReaderInterface $wavReader, ConsoleRenderInterface $render)
+    public function __construct($resource, $dim, WavReaderInterface $wavReader, ConsoleRenderInterface $render)
     {
         if (!is_resource($resource)) {
             throw new \InvalidArgumentException('Allow only resource');
@@ -192,7 +191,7 @@ class VisualizationEqualizer
     private function correctPow(&$array)
     {
         $log = log(count($array), 2);  // 7.8853165
-        $border = (double) intval($log);   // 7.8514484 > 7 > 7.000000
+        $border = (float) intval($log);   // 7.8514484 > 7 > 7.000000
 
         if ($border !== $log) {
             $array += array_fill(0, pow(2, ($border + 1)), 0);
